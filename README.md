@@ -13,6 +13,11 @@ Go code generate html
 ![GitHub Release](https://img.shields.io/github/v/release/gouef/html?label=RC&include_prereleases&filter=*rc*&logoSize=diago)
 ![GitHub Release](https://img.shields.io/github/v/release/gouef/html?label=Beta&include_prereleases&filter=*beta*&logoSize=diago)
 
+## Instalation
+
+```shell
+go get -u github.com/gouef/html
+```
 
 ## Usages
 
