@@ -13,6 +13,24 @@ Go code generate html
 ![GitHub Release](https://img.shields.io/github/v/release/gouef/html?label=RC&include_prereleases&filter=*rc*&logoSize=diago)
 ![GitHub Release](https://img.shields.io/github/v/release/gouef/html?label=Beta&include_prereleases&filter=*beta*&logoSize=diago)
 
+
+## Usages
+
+```go
+package main
+
+import "github.com/gouef/html"
+
+func getHtml() string {
+	el := html.El("div")
+	el.AddAttribute("class", "container-fluid")
+	child := html.El("p").AddString("some text")
+	el.AddHtml(child)
+	
+	return el.Render()
+}
+```
+
 ## Commit rules
 Commit message should looks like
 ```
