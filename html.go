@@ -70,6 +70,16 @@ func (h *Html) AddData(data map[string]string) *Html {
 	return h
 }
 
+// AddId add id attribute to element
+// Example:
+//
+//	el := El("div")
+//	el.AddId("root")
+func (h *Html) AddId(id string) *Html {
+	h.AddAttribute("id", id)
+	return h
+}
+
 func (h *Html) addAttributeObject(attribute *Attribute) *Html {
 	if existAttr := h.existAttribute(attribute); existAttr != nil {
 		h.attributes[*existAttr] = attribute
