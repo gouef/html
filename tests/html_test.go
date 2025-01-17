@@ -37,6 +37,30 @@ func TestHtml(t *testing.T) {
 		assert.Equal(t, html.NewAttribute("class", "container"), el.GetAttribute("class"))
 	})
 
+	t.Run("Add Data attribute", func(t *testing.T) {
+		el := html.El("div")
+
+		el.AddAttributes([]map[string]interface{}{
+			{"class": "container"},
+			{"id": "main"},
+		})
+
+		el.AddData(map[string]string{
+			"id":    "123",
+			"level": "45",
+		})
+
+		assert.Equal(t, "div", el.GetName())
+		assert.Equal(t, false, el.IsEmpty())
+		assert.Equal(t, []*html.Attribute{
+			html.NewAttribute("class", "container"),
+			html.NewAttribute("id", "main"),
+			html.NewAttribute("data-id", "123"),
+			html.NewAttribute("data-level", "45"),
+		}, el.GetAttributes())
+		assert.Equal(t, html.NewAttribute("class", "container"), el.GetAttribute("class"))
+	})
+
 	t.Run("Rewrite attribute", func(t *testing.T) {
 		el := html.El("div")
 

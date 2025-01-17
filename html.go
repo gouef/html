@@ -55,6 +55,18 @@ func (h *Html) AddAttribute(name string, value interface{}) *Html {
 	return h.addAttributeObject(NewAttribute(name, value))
 }
 
+// AddData add attributes with prefix data-* to element
+// Example:
+// el := El("div")
+// el.AddData(map[string][string{"level": "35",})
+func (h *Html) AddData(data map[string]string) *Html {
+	for name, value := range data {
+		h.AddAttribute("data-"+name, value)
+	}
+
+	return h
+}
+
 func (h *Html) addAttributeObject(attribute *Attribute) *Html {
 	if existAttr := h.existAttribute(attribute); existAttr != nil {
 		h.attributes[*existAttr] = attribute
