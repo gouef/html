@@ -17,6 +17,7 @@ func newHtml() *Html {
 
 // El create html element
 // Example:
+//
 // el := El("p")
 func El(name string) *Html {
 	el := newHtml()
@@ -49,6 +50,7 @@ func (h *Html) IsEmpty() bool {
 
 // AddAttribute add attribute to element
 // Example:
+//
 // el := El("div")
 // el.AddAttribute("class", "container")
 func (h *Html) AddAttribute(name string, value interface{}) *Html {
@@ -57,6 +59,7 @@ func (h *Html) AddAttribute(name string, value interface{}) *Html {
 
 // AddData add attributes with prefix data-* to element
 // Example:
+//
 // el := El("div")
 // el.AddData(map[string][string{"level": "35",})
 func (h *Html) AddData(data map[string]string) *Html {
@@ -89,6 +92,7 @@ func (h *Html) existAttribute(attribute *Attribute) *int {
 
 // AddAttributes add attributes to element
 // Example:
+//
 // el := El("div")
 //
 //	el.AddAttributes([]map[string]interface{}{
@@ -144,6 +148,7 @@ func (h *Html) RemoveAttributes(names []string) *Html {
 
 // AddHtml add html child to element
 // Example:
+//
 // el := El("div")
 // child := El("p").AddString("some text")
 // el.AddHtml(child)
@@ -153,6 +158,7 @@ func (h *Html) AddHtml(child *Html) *Html {
 
 // AddHtmlChildren add html children to element
 // Example:
+//
 // el := El("div")
 // p := El("p").AddString("some text")
 // div := El("div")
@@ -167,6 +173,7 @@ func (h *Html) AddHtmlChildren(children []*Html) *Html {
 
 // AddString add html children to element
 // Example:
+//
 // p := El("p").AddString("some text")
 func (h *Html) AddString(str string) *Html {
 	var child interface{} = str
@@ -175,6 +182,7 @@ func (h *Html) AddString(str string) *Html {
 
 // AddStringChildren add string children to element
 // Example:
+//
 // el := El("div")
 // children := []string{"some text", "<p>another text</p>"}
 // el.AddHtmlChildren(children)

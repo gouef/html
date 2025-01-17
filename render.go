@@ -4,6 +4,7 @@ import "strings"
 
 // Render render html to string
 // Example:
+//
 // el := El("div")
 // children := []string{"some text", "<p>another text</p>"}
 // el.AddHtmlChildren(children)
