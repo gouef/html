@@ -5,10 +5,10 @@ import "strings"
 // Render render html to string
 // Example:
 //
-// el := El("div")
-// children := []string{"some text", "<p>another text</p>"}
-// el.AddHtmlChildren(children)
-// html := el.Render()
+//	el := El("div")
+//	children := []string{"some text", "<p>another text</p>"}
+//	el.AddHtmlChildren(children)
+//	html := el.Render()
 func (h *Html) Render(level ...int) string {
 	indentLevel := 0
 	if len(level) > 0 {
