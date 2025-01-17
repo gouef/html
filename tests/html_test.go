@@ -52,12 +52,12 @@ func TestHtml(t *testing.T) {
 
 		assert.Equal(t, "div", el.GetName())
 		assert.Equal(t, false, el.IsEmpty())
-		assert.Equal(t, []*html.Attribute{
-			html.NewAttribute("class", "container"),
-			html.NewAttribute("id", "main"),
-			html.NewAttribute("data-id", "123"),
-			html.NewAttribute("data-level", "45"),
-		}, el.GetAttributes())
+
+		assert.Equal(t, html.NewAttribute("class", "container"), el.GetAttribute("class"))
+		assert.Equal(t, html.NewAttribute("id", "main"), el.GetAttribute("id"))
+		assert.Equal(t, html.NewAttribute("data-id", "123"), el.GetAttribute("data-id"))
+		assert.Equal(t, html.NewAttribute("data-level", "45"), el.GetAttribute("data-level"))
+
 		assert.Equal(t, html.NewAttribute("class", "container"), el.GetAttribute("class"))
 	})
 
