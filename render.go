@@ -25,8 +25,6 @@ func (h *Html) Render(level ...int) string {
 				html += v
 			case *Html:
 				html += "\n" + v.Render(indentLevel+1)
-			default:
-
 			}
 
 		}

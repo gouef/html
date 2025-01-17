@@ -193,7 +193,6 @@ func (h *Html) AddChild(child interface{}) *Html {
 		h.children = append(h.children, v)
 	case string:
 		h.children = append(h.children, v)
-	default:
 	}
 	return h
 }
